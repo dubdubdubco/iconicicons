@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/Make-Lemonade/iconicicons/main/.github/hero.jpg" alt="Iconic Icons">
+    <img src="https://user-images.githubusercontent.com/203882/116871351-06e22100-ac0c-11eb-9ae5-7524e308ad7c.jpg" alt="Iconic Icons">
 </p>
 
 <p align="center">
