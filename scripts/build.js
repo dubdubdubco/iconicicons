@@ -68,10 +68,10 @@ let transform = {
 }
 
 async function getIcons() {
-  let files = await fs.readdir(`./src`)
+  let files = await fs.readdir(`./icons`)
   return Promise.all(
     files.map(async (file) => ({
-      svg: await fs.readFile(`./src/${file}`, 'utf8'),
+      svg: await fs.readFile(`./icons/${file}`, 'utf8'),
       componentName: `${camelcase(file.replace(/\.svg$/, ''), {
         pascalCase: true,
       })}Icon`,
@@ -91,7 +91,7 @@ function exportAll(icons, format, extension) {
 }
 
 async function buildIcons(package, format) {
-  let outDir = `./${package}`
+  let outDir = `./${package}/icons`
   if (format === 'esm') {
     outDir += '/esm'
   }
@@ -134,12 +134,11 @@ async function buildIcons(package, format) {
 function main(package) {
   console.log(`Building ${package} package...`)
 
-  Promise.all([rimraf(`./${package}/*`)])
+  Promise.all([rimraf(`./${package}/icons/*`)])
     .then(() =>
       Promise.all([
         buildIcons(package, 'esm'),
         buildIcons(package, 'cjs'),
-        fs.writeFile(`./${package}/package.json`, `{"module": "./esm/index.js"}`, 'utf8'),
       ])
     )
     .then(() => console.log(`Finished building ${package} package.`))

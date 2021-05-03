@@ -6,6 +6,10 @@
         "type": "git",
         "url": "https://github.com/Make-Lemonade/iconicicons.git"
     },
+    "files": [
+        "icons/"
+    ],
+    "module": "./icons/esm/index.js",
     "publishConfig": {
         "access": "public"
     },

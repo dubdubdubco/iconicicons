@@ -2,12 +2,16 @@
     "name": "@iconicicons/icons",
     "version": "1.0.0",
     "license": "MIT",
+    "files": [
+        "icons/"
+    ],
     "scripts": {
         "prepublishOnly": "npm run build",
-        "build": "npm run build-react && npm run build-vue && npm run build-vue3",
+        "build": "npm run build-icons && npm run build-react && npm run build-vue && npm run build-vue3",
         "build-react": "node ./scripts/build.js react",
         "build-vue": "node ./scripts/build.js vue",
-        "build-vue3": "node ./scripts/build.js vue3"
+        "build-vue3": "node ./scripts/build.js vue3",
+        "build-icons": "rimraf ./icons && cp -R ./src ./icons"
     },
     "devDependencies": {
         "@babel/core": "^7.12.10",
