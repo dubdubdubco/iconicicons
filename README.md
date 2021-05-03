@@ -1,4 +1,14 @@
-# Iconic Icons
+<p align="center">
+    <img src="https://raw.githubusercontent.com/Make-Lemonade/iconicicons/main/.github/hero.jpg" alt="Iconic Icons">
+</p>
+
+<p align="center">
+    Iconic is a free “do wtf you want with” set of pixel-perfect icons. <br>Available as basic SVG icons and via first-party <a href="#react">React</a> and <a href="#vue">Vue</a> libraries.
+<p>
+
+<p align="center">
+  <a href="https://iconic.app"><strong>Browse at iconic.app &rarr;</strong></a>
+</p>
 
 ## Basic Usage
 
