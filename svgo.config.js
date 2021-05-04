@@ -6,5 +6,11 @@ module.exports = {
     plugins: [
         'removeXMLNS',
         'sortAttrs',
+        {
+            name: 'convertColors',
+            params: {
+                currentColor: true
+            }
+        }
     ]
 }
