@@ -9,6 +9,7 @@
     "files": [
         "icons/"
     ],
+    "main": "./icons/index.js",
     "module": "./icons/esm/index.js",
     "publishConfig": {
         "access": "public"
