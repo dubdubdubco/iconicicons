@@ -134,6 +134,10 @@ async function buildIcons(package, format) {
         types = `import * as React from 'react';\ndeclare function ${componentName}(props: React.ComponentProps<'svg'>): JSX.Element;\nexport default ${componentName};\n`
       }
 
+      if(package === 'solid'){
+        types = `import type { JSX } from 'solid-js';\ndeclare function ${componentName}(props: JSX.SvgSVGAttributes<SVGSVGElement>): JSX.Element;\nexport default ${componentName};\n`
+      }
+
       if (package === 'vue') {
         return [fs.writeFile(`${outDir}/${componentName}.vue`, content, 'utf8'), []]
       }
@@ -151,7 +155,7 @@ async function buildIcons(package, format) {
     await fs.writeFile(`${outDir}/index.js`, exportAll(icons, format, '.js'), 'utf8')
   }
 
-  if (package === 'react') {
+  if (package === 'react' || package === 'solid') {
     await fs.writeFile(`${outDir}/index.d.ts`, exportAll(icons, 'esm', ''), 'utf8')
   }
 }
