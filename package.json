@@ -6,10 +6,11 @@
     ],
     "scripts": {
         "prepublishOnly": "npm run build",
-        "build": "npm run build-icons && npm run build-react && npm run build-vue && npm run build-vue3",
+        "build": "npm run build-icons && npm run build-react && npm run build-vue && npm run build-vue3 && build-solid",
         "build-react": "node ./scripts/build.js react",
         "build-vue": "node ./scripts/build.js vue",
         "build-vue3": "node ./scripts/build.js vue3",
+        "build-solid": "node ./scripts/build.js solid",
         "build-icons": "rimraf ./icons && cp -R ./src ./icons && svgo -q -f ./icons",
         "storybook": "npm run build && start-storybook -p 6006",
         "build-storybook": "npm run build && build-storybook"

@@ -1,0 +1,20 @@
+{
+    "name": "@iconicicons/solid",
+    "version": "1.0.3",
+    "homepage": "https://github.com/Make-Lemonade/iconicicons#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Make-Lemonade/iconicicons.git"
+    },
+    "files": [
+        "icons/"
+    ],
+    "main": "./icons/index.js",
+    "module": "./icons/esm/index.js",
+    "publishConfig": {
+        "access": "public"
+    },
+    "peerDependencies": {
+        "solid-js": ">= 0.26.5"
+    }
+}

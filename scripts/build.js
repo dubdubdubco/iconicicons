@@ -65,6 +65,31 @@ let transform = {
       )
       .replace('export function render', 'module.exports = function render')
   },
+  solid: async (svg, componentName, format) => {
+    const code =  `import { spread, template } from 'solid-js/web';
+
+    const _tmpl$ = template('${svg.replaceAll('\n', '').replaceAll('  ',' ')}');
+
+    function ${componentName}(props) {
+      return (() => {
+        const _el$ = _tmpl$.cloneNode(true);
+
+        spread(_el$, props, true, true);
+
+        return _el$;
+      })();
+    }
+
+    export default ${componentName}`.replaceAll('  ', ' ');
+
+    if (format === 'esm') {
+      return code
+    }
+
+    return code
+      .replace(`import { spread, template } from 'solid-js/web'`, `const { spread, template } = require('solid-js/web')`)
+      .replace(`export default`, `module.exports =`)
+  },
 }
 
 async function getIcons() {

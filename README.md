@@ -75,3 +75,28 @@ export default {
 ```
 
 Icons use an upper camel case naming convention and are always suffixed with the word `Icon`.
+
+## Solid
+
+First, install `@iconicicons/solid` from npm:
+
+```sh
+npm install @iconicicons/solid
+```
+
+Now each icon can be imported individually as a Solid component:
+
+```js
+import { HeartIcon } from '@iconicicons/solid'
+
+function MyComponent() {
+  return (
+    <div>
+      <HeartIcon />
+      <p>...</p>
+    </div>
+  )
+}
+```
+
+Icons use an upper camel case naming convention and are always suffixed with the word `Icon`.
