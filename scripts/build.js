@@ -155,7 +155,7 @@ async function buildIcons(package, format) {
     await fs.writeFile(`${outDir}/index.js`, exportAll(icons, format, '.js'), 'utf8')
   }
 
-  if (package === 'react' || package === 'solid') {
+  if (package === 'react' || package === 'vue3' || package === 'solid') {
     await fs.writeFile(`${outDir}/index.d.ts`, exportAll(icons, 'esm', ''), 'utf8')
   }
 }
