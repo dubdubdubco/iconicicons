@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
+      - run: yarn
       - name: Publish icons
         run: npm publish
         env:
